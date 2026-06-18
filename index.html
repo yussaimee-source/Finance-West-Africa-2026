@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance West Africa 2026 | 14 October 2026 | Lagos, Nigeria</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <img src="Finance_West_Africa_2026.png" alt="Finance West Africa 2026" class="nav__logo-img">
+      </a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#themes">Themes</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#register">Register</a></li>
+      </ul>
+      <a href="#register" class="btn btn--nav">Register Now</a>
+      <button class="nav__burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+
+    <!-- Animated grid overlay -->
+    <div class="hero__grid"></div>
+
+    <!-- Floating Lagos data nodes -->
+    <div class="hero__nodes" id="floatingNodes"></div>
+
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <span class="hero__pulse"></span>
+        <span>14 October 2026 &nbsp;·&nbsp; Lagos, Nigeria</span>
+      </div>
+
+      <h1 class="hero__headline">
+        <span class="hero__headline-line" data-delay="0">Banking at Scale:</span>
+        <span class="hero__headline-line hero__headline-accent" data-delay="120">Trust, Rails</span>
+        <span class="hero__headline-line" data-delay="240">and Intelligence</span>
+        <span class="hero__headline-line hero__headline-sub" data-delay="360">for Nigeria's Next Financial Era</span>
+      </h1>
+
+      <p class="hero__subtext">
+        West Africa's premier banking summit convenes the continent's most influential financial minds in Lagos — where AI, regulation, and infrastructure converge to define tomorrow's economy.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#register" class="btn btn--primary">Secure Your Place</a>
+        <a href="#themes" class="btn btn--ghost">Explore the Agenda</a>
+      </div>
+
+      <div class="hero__countdown" id="countdown">
+        <div class="hero__countdown-item">
+          <span class="hero__countdown-num" id="cd-days">000</span>
+          <span class="hero__countdown-label">Days</span>
+        </div>
+        <div class="hero__countdown-divider">:</div>
+        <div class="hero__countdown-item">
+          <span class="hero__countdown-num" id="cd-hours">00</span>
+          <span class="hero__countdown-label">Hours</span>
+        </div>
+        <div class="hero__countdown-divider">:</div>
+        <div class="hero__countdown-item">
+          <span class="hero__countdown-num" id="cd-mins">00</span>
+          <span class="hero__countdown-label">Minutes</span>
+        </div>
+        <div class="hero__countdown-divider">:</div>
+        <div class="hero__countdown-item">
+          <span class="hero__countdown-num" id="cd-secs">00</span>
+          <span class="hero__countdown-label">Seconds</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI data tags floating over Lagos skyline -->
+    <div class="hero__ai-tags">
+      <div class="ai-tag ai-tag--1"><span class="ai-dot"></span>AI Credit Scoring · Live</div>
+      <div class="ai-tag ai-tag--2"><span class="ai-dot"></span>CBN Digital Rail · Active</div>
+      <div class="ai-tag ai-tag--3"><span class="ai-dot"></span>₦ 47.2T Transactions/yr</div>
+      <div class="ai-tag ai-tag--4"><span class="ai-dot"></span>CBDC Pilot Phase 3</div>
+    </div>
+
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ── -->
+  <div class="statsbar">
+    <div class="statsbar__inner">
+      <div class="statsbar__item">
+        <strong>1,200+</strong><span>Delegates</span>
+      </div>
+      <div class="statsbar__sep"></div>
+      <div class="statsbar__item">
+        <strong>80+</strong><span>Speakers</span>
+      </div>
+      <div class="statsbar__sep"></div>
+      <div class="statsbar__item">
+        <strong>30+</strong><span>Nations</span>
+      </div>
+      <div class="statsbar__sep"></div>
+      <div class="statsbar__item">
+        <strong>12</strong><span>Breakout Sessions</span>
+      </div>
+      <div class="statsbar__sep"></div>
+      <div class="statsbar__item">
+        <strong>1 Day</strong><span>High-Impact Summit</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__layout">
+        <div class="about__text">
+          <p class="section-eyebrow">About the Summit</p>
+          <h2 class="section-title">The Financial Future of <em>West Africa</em> Is Being Written in Lagos</h2>
+          <p class="about__body">
+            Finance West Africa 2026 brings together central bank governors, fintech founders, commercial bank CEOs, regulators, and global investors for a single day of uncompromising dialogue about what it takes to build financial infrastructure at the scale Nigeria demands.
+          </p>
+          <p class="about__body">
+            From AI-driven credit rails and embedded finance to CBDC adoption and cross-border payment corridors — this is where strategy meets execution, and ambition meets accountability.
+          </p>
+          <a href="#register" class="btn btn--primary">Join 1,200 Leaders</a>
+        </div>
+        <div class="about__visual">
+          <div class="about__card-stack">
+            <div class="about__card about__card--bg"></div>
+            <div class="about__card about__card--mid"></div>
+            <div class="about__card about__card--front">
+              <div class="about__card-inner">
+                <div class="about__card-label">Summit Focus</div>
+                <ul class="about__card-list">
+                  <li>🏦 Systemic Banking Reform</li>
+                  <li>🤖 AI in Financial Services</li>
+                  <li>🔗 Payment Rail Architecture</li>
+                  <li>🌍 Cross-Border Trade Finance</li>
+                  <li>📱 Digital Asset Regulation</li>
+                  <li>💳 Financial Inclusion at Scale</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY ATTEND ── -->
+  <section class="why section section--dark" id="why">
+    <div class="container">
+      <p class="section-eyebrow section-eyebrow--light">Why Attend</p>
+      <h2 class="section-title section-title--light">Built for People Who Shape <em>Markets</em></h2>
+      <div class="why__grid">
+        <div class="why__card">
+          <div class="why__icon">⚡</div>
+          <h3>Unfiltered Intelligence</h3>
+          <p>Not keynotes — conversations. Real data, hard questions, candid answers from those holding the controls of West Africa's financial system.</p>
+        </div>
+        <div class="why__card">
+          <div class="why__icon">🤝</div>
+          <h3>High-Value Connections</h3>
+          <p>An AI-matched networking system pairs you with the exact counterparts your business needs — before you even land in Lagos.</p>
+        </div>
+        <div class="why__card">
+          <div class="why__icon">🗺️</div>
+          <h3>Regulatory Clarity</h3>
+          <p>Direct access to CBN leadership, SEC officials, and fintech policy architects shaping the regulatory landscape in real time.</p>
+        </div>
+        <div class="why__card">
+          <div class="why__icon">🚀</div>
+          <h3>Innovation Showcase</h3>
+          <p>Experience live demos of the AI, blockchain, and payment technologies already transforming Nigerian banking infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THEMES / AGENDA ── -->
+  <section class="themes section" id="themes">
+    <div class="container">
+      <p class="section-eyebrow">Summit Themes</p>
+      <h2 class="section-title">Three Pillars. <em>One Conversation.</em></h2>
+
+      <div class="themes__grid">
+        <div class="themes__track">
+          <div class="themes__track-num">01</div>
+          <div class="themes__track-icon">🤖</div>
+          <h3 class="themes__track-title">AI & The New Banking Stack</h3>
+          <p class="themes__track-desc">How machine learning, generative AI, and predictive analytics are being deployed across Nigeria's banking system — from fraud detection to hyper-personalised lending.</p>
+          <ul class="themes__topics">
+            <li>AI Credit Scoring in Low-Data Markets</li>
+            <li>LLMs in Compliance & KYC</li>
+            <li>Agentic Banking: Autonomous Financial Services</li>
+            <li>AI Risk Models for Emerging Markets</li>
+          </ul>
+        </div>
+
+        <div class="themes__track themes__track--accent">
+          <div class="themes__track-num">02</div>
+          <div class="themes__track-icon">🔗</div>
+          <h3 class="themes__track-title">Payment Rails & Digital Infrastructure</h3>
+          <p class="themes__track-desc">The architecture underneath the economy — real-time payments, CBDC, open banking APIs, and the cross-border corridors connecting West Africa to the world.</p>
+          <ul class="themes__topics">
+            <li>eNaira 2.0 & CBDC Adoption</li>
+            <li>PAPSS and Pan-African Settlement</li>
+            <li>Open Banking API Standards</li>
+            <li>Stablecoin Corridors in Trade Finance</li>
+          </ul>
+        </div>
+
+        <div class="themes__track">
+          <div class="themes__track-num">03</div>
+          <div class="themes__track-icon">⚖️</div>
+          <h3 class="themes__track-title">Regulation, Trust & Systemic Risk</h3>
+          <p class="themes__track-desc">Building confidence in a market undergoing rapid transformation — what regulators, banks, and fintechs must do together to ensure a resilient, inclusive financial system.</p>
+          <ul class="themes__topics">
+            <li>CBN Policy Direction for 2026–2030</li>
+            <li>Fintech Licensing & Regulatory Sandboxes</li>
+            <li>Cybersecurity in Core Banking</li>
+            <li>Financial Inclusion & Agent Banking</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="themes__timeline">
+        <p class="section-eyebrow">Day at a Glance</p>
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="timeline__time">08:00</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">Registration & Executive Networking Breakfast</div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__time">09:30</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">Opening Plenary — Banking at Scale: Setting the Agenda</div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__time">10:30</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">CBN Governor Address & Regulatory Outlook</div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__time">11:30</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">Breakout Sessions: AI | Payments | Regulation</div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__time">13:00</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">Networking Lunch & Innovation Exhibition</div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__time">14:30</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">CEO Roundtable — The Future of Commercial Banking</div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__time">16:00</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">Fintech Showcase & Investor Pitch Session</div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__time">17:30</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">Closing Keynote & Evening Reception</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPEAKERS ── -->
+  <section class="speakers section section--dark" id="speakers">
+    <div class="container">
+      <p class="section-eyebrow section-eyebrow--light">Featured Voices</p>
+      <h2 class="section-title section-title--light">The People <em>Reshaping</em> West African Finance</h2>
+
+      <div class="speakers__grid">
+        <div class="speaker-card">
+          <div class="speaker-card__avatar speaker-card__avatar--1">
+            <div class="speaker-card__initials">AG</div>
+          </div>
+          <div class="speaker-card__info">
+            <h4>Adaeze Gbadebo</h4>
+            <p>Deputy Governor, Central Bank of Nigeria</p>
+            <span class="speaker-card__tag">Regulation</span>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <div class="speaker-card__avatar speaker-card__avatar--2">
+            <div class="speaker-card__initials">EO</div>
+          </div>
+          <div class="speaker-card__info">
+            <h4>Emeka Okafor</h4>
+            <p>CEO, First Digital Bank West Africa</p>
+            <span class="speaker-card__tag">Innovation</span>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <div class="speaker-card__avatar speaker-card__avatar--3">
+            <div class="speaker-card__initials">FA</div>
+          </div>
+          <div class="speaker-card__info">
+            <h4>Fatima Al-Hassan</h4>
+            <p>Chief AI Officer, AfriPay Technologies</p>
+            <span class="speaker-card__tag">AI</span>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <div class="speaker-card__avatar speaker-card__avatar--4">
+            <div class="speaker-card__initials">KC</div>
+          </div>
+          <div class="speaker-card__info">
+            <h4>Kofi Chambers</h4>
+            <p>Managing Director, IFC West Africa</p>
+            <span class="speaker-card__tag">Investment</span>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <div class="speaker-card__avatar speaker-card__avatar--5">
+            <div class="speaker-card__initials">NI</div>
+          </div>
+          <div class="speaker-card__info">
+            <h4>Ngozi Iweala-Eze</h4>
+            <p>Head of Digital Payments, PanAfrica Clearing</p>
+            <span class="speaker-card__tag">Payments</span>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <div class="speaker-card__avatar speaker-card__avatar--6">
+            <div class="speaker-card__initials">BB</div>
+          </div>
+          <div class="speaker-card__info">
+            <h4>Bayo Bankole</h4>
+            <p>Founder & CEO, CredoAI Nigeria</p>
+            <span class="speaker-card__tag">Fintech</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="speakers__more">
+        <p>+ 74 more speakers to be announced</p>
+        <a href="#register" class="btn btn--ghost btn--ghost-light">Register for Speaker Updates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPONSORS ── -->
+  <section class="sponsors section" id="sponsors">
+    <div class="container">
+      <p class="section-eyebrow">Partners & Sponsors</p>
+      <h2 class="section-title">Backed by the <em>Industry's Best</em></h2>
+
+      <div class="sponsors__tier">
+        <p class="sponsors__tier-label">Headline Sponsors</p>
+        <div class="sponsors__row sponsors__row--headline">
+          <div class="sponsor-logo sponsor-logo--large">First Bank<br><small>Nigeria</small></div>
+          <div class="sponsor-logo sponsor-logo--large">Access<br><small>Bank</small></div>
+          <div class="sponsor-logo sponsor-logo--large">Zenith<br><small>Bank</small></div>
+        </div>
+      </div>
+
+      <div class="sponsors__tier">
+        <p class="sponsors__tier-label">Gold Sponsors</p>
+        <div class="sponsors__row sponsors__row--gold">
+          <div class="sponsor-logo">MTN<br><small>Fintech</small></div>
+          <div class="sponsor-logo">Flutterwave</div>
+          <div class="sponsor-logo">Paystack</div>
+          <div class="sponsor-logo">Sterling<br><small>Bank</small></div>
+        </div>
+      </div>
+
+      <div class="sponsors__tier">
+        <p class="sponsors__tier-label">Supporters</p>
+        <div class="sponsors__row sponsors__row--support">
+          <div class="sponsor-logo sponsor-logo--sm">Moniepoint</div>
+          <div class="sponsor-logo sponsor-logo--sm">Kuda Bank</div>
+          <div class="sponsor-logo sponsor-logo--sm">PiggyVest</div>
+          <div class="sponsor-logo sponsor-logo--sm">Carbon</div>
+          <div class="sponsor-logo sponsor-logo--sm">NIBSS</div>
+          <div class="sponsor-logo sponsor-logo--sm">Interswitch</div>
+        </div>
+      </div>
+
+      <div class="sponsors__cta">
+        <p>Interested in sponsorship opportunities?</p>
+        <a href="mailto:sponsor@financewestafrica.com" class="btn btn--outline">Download Sponsorship Pack</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REGISTER ── -->
+  <section class="register section section--dark" id="register">
+    <div class="container">
+      <p class="section-eyebrow section-eyebrow--light">Registration</p>
+      <h2 class="section-title section-title--light">Reserve Your Seat at <em>Nigeria's Most Important</em> Financial Summit</h2>
+
+      <div class="tickets__grid">
+        <div class="ticket-card">
+          <div class="ticket-card__badge">Standard</div>
+          <div class="ticket-card__price">
+            <span class="ticket-card__currency">$</span>
+            <span class="ticket-card__amount">595</span>
+          </div>
+          <p class="ticket-card__desc">Full-day conference access, digital programme, networking lunch</p>
+          <ul class="ticket-card__features">
+            <li>✓ All plenary sessions</li>
+            <li>✓ 2 breakout sessions</li>
+            <li>✓ Networking lunch</li>
+            <li>✓ Digital materials</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">Register Now</a>
+        </div>
+
+        <div class="ticket-card ticket-card--featured">
+          <div class="ticket-card__badge ticket-card__badge--gold">VIP Executive</div>
+          <div class="ticket-card__price">
+            <span class="ticket-card__currency">$</span>
+            <span class="ticket-card__amount">1,495</span>
+          </div>
+          <p class="ticket-card__desc">Full access + exclusive executive roundtable, VIP dinner & 1:1 networking</p>
+          <ul class="ticket-card__features">
+            <li>✓ All plenary & breakout sessions</li>
+            <li>✓ Executive Roundtable (invite-only)</li>
+            <li>✓ VIP Networking Reception</li>
+            <li>✓ AI-Matched Connections</li>
+            <li>✓ Post-event recordings</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary">Register Now</a>
+        </div>
+
+        <div class="ticket-card">
+          <div class="ticket-card__badge">Institutional</div>
+          <div class="ticket-card__price">
+            <span class="ticket-card__currency">$</span>
+            <span class="ticket-card__amount">3,800</span>
+          </div>
+          <p class="ticket-card__desc">5-delegate team package with branding presence and priority access</p>
+          <ul class="ticket-card__features">
+            <li>✓ 5 delegate passes</li>
+            <li>✓ Exhibition table placement</li>
+            <li>✓ Logo in programme</li>
+            <li>✓ VIP lounge access</li>
+            <li>✓ Complimentary hotel night</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="register__form-block" id="contact">
+        <h3>Register Your Interest</h3>
+        <p>Our team will reach out with full details within 24 hours.</p>
+        <div class="register__form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="Emeka">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Okafor">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" placeholder="emeka@firstbank.com">
+            </div>
+            <div class="form-group">
+              <label for="org">Organisation</label>
+              <input type="text" id="org" placeholder="First Bank Nigeria">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="role">Job Title</label>
+              <input type="text" id="role" placeholder="Chief Digital Officer">
+            </div>
+            <div class="form-group">
+              <label for="ticket">Ticket Type</label>
+              <select id="ticket">
+                <option>Standard — $595</option>
+                <option>VIP Executive — $1,495</option>
+                <option>Institutional (5 passes) — $3,800</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn--primary btn--full" onclick="handleSubmit(event)">Submit Registration</button>
+          <p class="form-legal">By submitting, you agree to our <a href="#">privacy policy</a> and consent to receive event communications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="Finance_West_Africa_2026.png" alt="Finance West Africa 2026" class="footer__logo">
+          <p>West Africa's premier banking and financial services summit. Connecting the leaders shaping Nigeria's financial future.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Twitter/X">𝕏</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h5>Summit</h5>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#themes">Agenda</a></li>
+              <li><a href="#speakers">Speakers</a></li>
+              <li><a href="#sponsors">Sponsors</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Attend</h5>
+            <ul>
+              <li><a href="#register">Register</a></li>
+              <li><a href="#">Group Bookings</a></li>
+              <li><a href="#">Visa Support</a></li>
+              <li><a href="#">Accommodation</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="mailto:info@financewestafrica.com">info@financewestafrica.com</a></li>
+              <li><a href="mailto:sponsor@financewestafrica.com">Sponsorship Enquiries</a></li>
+              <li><a href="mailto:speakers@financewestafrica.com">Speaker Nominations</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Finance West Africa. All rights reserved. &nbsp;|&nbsp; Lagos, Nigeria</p>
+        <p><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── COUNTDOWN ──
+    function updateCountdown() {
+      const target = new Date('2026-10-14T09:00:00+01:00');
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) return;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('cd-days').textContent = String(days).padStart(3, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── HERO CANVAS PARTICLE SYSTEM ──
+    const canvas = document.getElementById('heroCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let lines = [];
+    let W, H;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * W;
+        this.y = Math.random() * H;
+        this.r = Math.random() * 1.8 + 0.3;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.alpha = Math.random() * 0.6 + 0.2;
+        this.color = Math.random() > 0.6 ? '#1DB89A' : Math.random() > 0.5 ? '#C8A951' : '#ffffff';
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.alpha;
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 160; i++) particles.push(new Particle());
+
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = '#1DB89A';
+            ctx.globalAlpha = (1 - dist / 120) * 0.12;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateCanvas() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => { p.update(); p.draw(); });
+      drawConnections();
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(animateCanvas);
+    }
+    animateCanvas();
+
+    // ── SKYLINE ── drawn on the canvas bottom
+    function drawSkyline() {
+      // Redrawn each frame inside animateCanvas — instead add to DOM SVG
+    }
+
+    // ── NAV SCROLL ──
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+    });
+
+    // ── HERO TEXT ANIMATION ──
+    window.addEventListener('DOMContentLoaded', () => {
+      const lines = document.querySelectorAll('.hero__headline-line');
+      lines.forEach((el, i) => {
+        el.style.animationDelay = (i * 0.14 + 0.3) + 's';
+        el.classList.add('hero__headline-line--visible');
+      });
+
+      // Floating nodes
+      const labels = ['AI Underwriting', 'Mobile Money', 'Open Banking', 'CBDC Node', 'Credit Rail', 'KYC Engine', 'FX Gateway', 'Agent Network'];
+      const container = document.getElementById('floatingNodes');
+      labels.forEach((label, i) => {
+        const node = document.createElement('div');
+        node.className = 'float-node';
+        node.textContent = label;
+        node.style.left = (10 + (i % 4) * 23 + Math.random() * 8) + '%';
+        node.style.top = (15 + Math.floor(i / 4) * 40 + Math.random() * 15) + '%';
+        node.style.animationDelay = (i * 0.3) + 's';
+        container.appendChild(node);
+      });
+    });
+
+    // ── BURGER ──
+    document.querySelector('.nav__burger').addEventListener('click', function () {
+      document.querySelector('.nav__links').classList.toggle('nav__links--open');
+      this.classList.toggle('active');
+    });
+
+    // ── FORM ──
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target;
+      btn.textContent = '✓ Registration Received!';
+      btn.style.background = '#1DB89A';
+      btn.disabled = true;
+    }
+
+    // ── SCROLL REVEAL ──
+    const revealEls = document.querySelectorAll('.why__card, .themes__track, .speaker-card, .ticket-card, .statsbar__item, .timeline__item');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
