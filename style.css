@@ -3,7 +3,7 @@
    Palette:  Deep Navy #0A0F1E | Teal #1DB89A
              Gold  #C8A951    | Slate #1C2640
              Light #F0F4FF    | White #FFFFFF
-   Type:     Syne (display) · Space Grotesk (body) · Inter (ui)
+   Type:     Helvetica Neue / Helvetica / Arial (system stack)
 ───────────────────────────────────────────────── */
 
 /* ── RESET & BASE ── */
@@ -25,12 +25,13 @@
   --radius:  12px;
   --radius-lg: 20px;
   --transition: 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font);
   background: var(--navy);
   color: var(--white);
   line-height: 1.6;
@@ -55,7 +56,7 @@ em { font-style: normal; color: var(--teal); }
 .section--dark { background: var(--slate); }
 
 .section-eyebrow {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 3px;
@@ -66,9 +67,10 @@ em { font-style: normal; color: var(--teal); }
 .section-eyebrow--light { color: var(--teal); }
 
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-size: clamp(32px, 4vw, 52px);
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   line-height: 1.1;
   color: var(--white);
   margin-bottom: 48px;
@@ -82,7 +84,7 @@ em { font-style: normal; color: var(--teal); }
   gap: 8px;
   padding: 14px 28px;
   border-radius: 6px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -216,7 +218,7 @@ em { font-style: normal; color: var(--teal); }
   border: 1px solid rgba(29,184,154,0.2);
   color: rgba(29,184,154,0.7);
   font-size: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   padding: 5px 10px;
   border-radius: 4px;
   white-space: nowrap;
@@ -249,7 +251,7 @@ em { font-style: normal; color: var(--teal); }
   padding: 8px 16px;
   border-radius: 100px;
   font-size: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   font-weight: 500;
   color: var(--teal);
   letter-spacing: 1px;
@@ -274,9 +276,10 @@ em { font-style: normal; color: var(--teal); }
   margin-bottom: 28px;
 }
 .hero__headline-line {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-size: clamp(38px, 6vw, 82px);
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -1px;
   line-height: 1.05;
   color: var(--white);
   display: block;
@@ -327,7 +330,7 @@ em { font-style: normal; color: var(--teal); }
   gap: 4px;
 }
 .hero__countdown-num {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-size: clamp(24px, 3vw, 36px);
   font-weight: 700;
   color: var(--teal);
@@ -337,7 +340,7 @@ em { font-style: normal; color: var(--teal); }
 }
 .hero__countdown-label {
   font-size: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--muted);
@@ -370,7 +373,7 @@ em { font-style: normal; color: var(--teal); }
   padding: 10px 16px;
   border-radius: 6px;
   font-size: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   color: rgba(255,255,255,0.8);
   white-space: nowrap;
   animation: slideInRight 0.8s ease both;
@@ -403,7 +406,7 @@ em { font-style: normal; color: var(--teal); }
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   animation: fadeIn 1.5s 1.5s ease both;
 }
 .hero__scroll-line {
@@ -452,7 +455,7 @@ em { font-style: normal; color: var(--teal); }
 }
 .statsbar__item.revealed { opacity: 1; transform: none; }
 .statsbar__item strong {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-size: 28px;
   font-weight: 700;
   color: var(--teal);
@@ -460,7 +463,7 @@ em { font-style: normal; color: var(--teal); }
 .statsbar__item span {
   font-size: 12px;
   color: var(--muted);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   letter-spacing: 1px;
 }
 .statsbar__sep {
@@ -527,7 +530,7 @@ em { font-style: normal; color: var(--teal); }
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--teal);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   margin-bottom: 20px;
 }
 .about__card-list {
@@ -577,7 +580,7 @@ em { font-style: normal; color: var(--teal); }
   margin-bottom: 16px;
 }
 .why__card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 12px;
@@ -616,7 +619,7 @@ em { font-style: normal; color: var(--teal); }
 }
 .themes__track:hover { transform: translateY(-4px); border-color: rgba(29,184,154,0.5); }
 .themes__track-num {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -625,7 +628,7 @@ em { font-style: normal; color: var(--teal); }
 }
 .themes__track-icon { font-size: 32px; margin-bottom: 16px; }
 .themes__track-title {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-size: 20px;
   font-weight: 700;
   color: var(--white);
@@ -701,7 +704,7 @@ em { font-style: normal; color: var(--teal); }
 .timeline__item:nth-child(8) { transition-delay: 0.49s; }
 .timeline__time {
   font-size: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   font-weight: 600;
   color: var(--teal);
   letter-spacing: 1px;
@@ -765,13 +768,13 @@ em { font-style: normal; color: var(--teal); }
 .speaker-card__avatar--5 { background: linear-gradient(135deg, #8A4AE2, #3A1A8A); }
 .speaker-card__avatar--6 { background: linear-gradient(135deg, #E2904A, #8A4A1A); }
 .speaker-card__initials {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-weight: 700;
   font-size: 18px;
   color: var(--white);
 }
 .speaker-card__info h4 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font);
   font-weight: 600;
   font-size: 15px;
   color: var(--white);
@@ -788,7 +791,7 @@ em { font-style: normal; color: var(--teal); }
   background: rgba(29,184,154,0.12);
   color: var(--teal);
   font-size: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -815,7 +818,7 @@ em { font-style: normal; color: var(--teal); }
 }
 .sponsors__tier-label {
   font-size: 11px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--muted);
@@ -836,7 +839,7 @@ em { font-style: normal; color: var(--teal); }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px 32px;
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-weight: 700;
   font-size: 16px;
   color: rgba(255,255,255,0.5);
@@ -899,7 +902,7 @@ em { font-style: normal; color: var(--teal); }
   color: var(--navy);
   font-size: 11px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   padding: 4px 16px;
   border-radius: 0 0 8px 8px;
   letter-spacing: 1px;
@@ -908,7 +911,7 @@ em { font-style: normal; color: var(--teal); }
 .ticket-card__badge {
   display: inline-block;
   font-size: 11px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -929,9 +932,10 @@ em { font-style: normal; color: var(--teal); }
   font-weight: 600;
 }
 .ticket-card__amount {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-size: 52px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -1px;
   color: var(--white);
   line-height: 1;
 }
@@ -963,7 +967,7 @@ em { font-style: normal; color: var(--teal); }
   padding: 48px;
 }
 .register__form-block h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font);
   font-size: 28px;
   font-weight: 700;
   color: var(--white);
@@ -987,7 +991,7 @@ em { font-style: normal; color: var(--teal); }
 }
 .form-group label {
   font-size: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -999,7 +1003,7 @@ em { font-style: normal; color: var(--teal); }
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 14px 16px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font);
   font-size: 14px;
   color: var(--white);
   transition: var(--transition);
@@ -1066,7 +1070,7 @@ em { font-style: normal; color: var(--teal); }
   gap: 32px;
 }
 .footer__col h5 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
