@@ -148,7 +148,7 @@ em { font-style: normal; color: var(--teal); }
   gap: 40px;
 }
 .nav__logo { flex-shrink: 0; }
-.nav__logo-img { height: 48px; width: auto; }
+.nav__logo-img { height: 64px; width: auto; }
 .nav__links {
   display: flex;
   list-style: none;
@@ -1210,6 +1210,7 @@ em { font-style: normal; color: var(--teal); }
 }
 
 @media (max-width: 768px) {
+  .nav__logo-img { height: 48px; }
   .nav__links {
     display: none;
     position: fixed;
