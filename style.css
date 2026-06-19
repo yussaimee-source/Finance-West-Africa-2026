@@ -148,7 +148,7 @@ em { font-style: normal; color: var(--teal); }
   gap: 40px;
 }
 .nav__logo { flex-shrink: 0; }
-.nav__logo-img { height: 76px; width: auto; max-width: 220px; }
+.nav__logo-img { height: 68px; width: auto; max-width: 160px; }
 .nav__links {
   display: flex;
   list-style: none;
@@ -1218,7 +1218,7 @@ em { font-style: normal; color: var(--teal); }
 }
 
 @media (max-width: 768px) {
-  .nav__logo-img { height: 48px; }
+  .nav__logo-img { height: 52px; }
   .nav__links {
     display: none;
     position: fixed;
