@@ -148,7 +148,7 @@ em { font-style: normal; color: var(--teal); }
   gap: 40px;
 }
 .nav__logo { flex-shrink: 0; }
-.nav__logo-img { height: 64px; width: auto; }
+.nav__logo-img { height: 76px; width: auto; max-width: 220px; }
 .nav__links {
   display: flex;
   list-style: none;
@@ -1132,9 +1132,17 @@ em { font-style: normal; color: var(--teal); }
 .footer__brand {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
 }
-.footer__logo { height: 52px; width: auto; }
+.footer__logo {
+  height: 56px;
+  width: auto;
+  max-width: none;
+  align-self: flex-start;
+  flex-shrink: 0;
+  object-fit: contain;
+}
 .footer__brand > p {
   font-size: 14px;
   font-weight: 500;
