@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finance West Africa 2026 | 14 October 2026 | Lagos, Nigeria</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -30,13 +33,57 @@
 
   <!-- ── HERO ── -->
   <section class="hero" id="hero">
-    <canvas id="heroCanvas"></canvas>
 
-    <!-- Animated grid overlay -->
-    <div class="hero__grid"></div>
+    <!-- Lagos skyline photo background -->
+    <div class="hero__bg">
+      <img src="lagos-skyline.png" alt="Aerial view of Lagos waterfront skyline at sunset" class="hero__bg-img">
+      <div class="hero__bg-gradient"></div>
+    </div>
 
-    <!-- Floating Lagos data nodes -->
-    <div class="hero__nodes" id="floatingNodes"></div>
+    <!-- Animated AI overlay: scan lines, grid, data nodes, circuits -->
+    <div class="hero__ai-overlay">
+      <div class="scan-line scan-line--1"></div>
+      <div class="scan-line scan-line--2"></div>
+      <svg class="hero__circuit-svg" viewBox="0 0 1400 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="nodeGlow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1DB89A" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#1DB89A" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- Connection lines tracing the bridge cables and reinforcing the water network graphic -->
+        <g class="circuit-lines">
+          <path class="circuit-path circuit-path--1" d="M 870 230 L 940 260 L 1010 300" />
+          <path class="circuit-path circuit-path--2" d="M 1010 300 L 1100 340 L 1190 370" />
+          <path class="circuit-path circuit-path--3" d="M 480 540 L 560 555 L 640 545" />
+          <path class="circuit-path circuit-path--4" d="M 1190 370 L 1280 410" />
+          <path class="circuit-path circuit-path--5" d="M 640 545 L 720 530 L 800 550" />
+        </g>
+        <!-- Pulsing data nodes anchored on the bridge cables and water network -->
+        <g class="circuit-nodes">
+          <circle class="node-dot" cx="870" cy="230" r="4"/>
+          <circle class="node-dot node-dot--d1" cx="940" cy="260" r="4"/>
+          <circle class="node-dot node-dot--d2" cx="1010" cy="300" r="4"/>
+          <circle class="node-dot node-dot--d3" cx="1100" cy="340" r="4"/>
+          <circle class="node-dot node-dot--d4" cx="1190" cy="370" r="4"/>
+          <circle class="node-dot node-dot--d2" cx="1280" cy="410" r="4"/>
+          <circle class="node-dot node-dot--d1" cx="480" cy="540" r="4"/>
+          <circle class="node-dot node-dot--d3" cx="560" cy="555" r="4"/>
+          <circle class="node-dot" cx="640" cy="545" r="4"/>
+          <circle class="node-dot node-dot--d4" cx="720" cy="530" r="4"/>
+          <circle class="node-dot node-dot--d2" cx="800" cy="550" r="4"/>
+        </g>
+      </svg>
+
+      <!-- Floating AI tag chips anchored over the skyline -->
+      <div class="ai-tag ai-tag--1"><span class="ai-dot"></span>AI Credit Scoring · Live</div>
+      <div class="ai-tag ai-tag--2"><span class="ai-dot"></span>CBN Digital Rail · Active</div>
+      <div class="ai-tag ai-tag--3"><span class="ai-dot"></span>₦ 47.2T Transactions/yr</div>
+      <div class="ai-tag ai-tag--4"><span class="ai-dot"></span>CBDC Pilot Phase 3</div>
+
+      <!-- Subtle drifting data particles over the water -->
+      <div class="hero__nodes" id="floatingNodes"></div>
+    </div>
 
     <div class="hero__content">
       <div class="hero__eyebrow">
@@ -81,14 +128,6 @@
           <span class="hero__countdown-label">Seconds</span>
         </div>
       </div>
-    </div>
-
-    <!-- AI data tags floating over Lagos skyline -->
-    <div class="hero__ai-tags">
-      <div class="ai-tag ai-tag--1"><span class="ai-dot"></span>AI Credit Scoring · Live</div>
-      <div class="ai-tag ai-tag--2"><span class="ai-dot"></span>CBN Digital Rail · Active</div>
-      <div class="ai-tag ai-tag--3"><span class="ai-dot"></span>₦ 47.2T Transactions/yr</div>
-      <div class="ai-tag ai-tag--4"><span class="ai-dot"></span>CBDC Pilot Phase 3</div>
     </div>
 
     <div class="hero__scroll-hint">
@@ -581,80 +620,6 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // ── HERO CANVAS PARTICLE SYSTEM ──
-    const canvas = document.getElementById('heroCanvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    let lines = [];
-    let W, H;
-
-    function resize() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    class Particle {
-      constructor() { this.reset(); }
-      reset() {
-        this.x = Math.random() * W;
-        this.y = Math.random() * H;
-        this.r = Math.random() * 1.8 + 0.3;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-        this.alpha = Math.random() * 0.6 + 0.2;
-        this.color = Math.random() > 0.6 ? '#1DB89A' : Math.random() > 0.5 ? '#C8A951' : '#ffffff';
-      }
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = this.alpha;
-        ctx.fill();
-      }
-    }
-
-    for (let i = 0; i < 160; i++) particles.push(new Particle());
-
-    function drawConnections() {
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = '#1DB89A';
-            ctx.globalAlpha = (1 - dist / 120) * 0.12;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-    }
-
-    function animateCanvas() {
-      ctx.clearRect(0, 0, W, H);
-      particles.forEach(p => { p.update(); p.draw(); });
-      drawConnections();
-      ctx.globalAlpha = 1;
-      requestAnimationFrame(animateCanvas);
-    }
-    animateCanvas();
-
-    // ── SKYLINE ── drawn on the canvas bottom
-    function drawSkyline() {
-      // Redrawn each frame inside animateCanvas — instead add to DOM SVG
-    }
-
     // ── NAV SCROLL ──
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('mainNav');
@@ -669,16 +634,25 @@
         el.classList.add('hero__headline-line--visible');
       });
 
-      // Floating nodes
-      const labels = ['AI Underwriting', 'Mobile Money', 'Open Banking', 'CBDC Node', 'Credit Rail', 'KYC Engine', 'FX Gateway', 'Agent Network'];
+      // Floating nodes — anchored over the network graphic (bottom-left water)
+      // and the code-stream area (right side), avoiding the headline text zone
+      const nodePositions = [
+        { label: 'AI Underwriting', left: '4%',  top: '78%' },
+        { label: 'Mobile Money',    left: '14%', top: '88%' },
+        { label: 'Credit Rail',     left: '24%', top: '70%' },
+        { label: 'Open Banking',    left: '70%', top: '18%' },
+        { label: 'CBDC Node',       left: '82%', top: '40%' },
+        { label: 'FX Gateway',      left: '88%', top: '62%' },
+        { label: 'Agent Network',   left: '76%', top: '78%' },
+      ];
       const container = document.getElementById('floatingNodes');
-      labels.forEach((label, i) => {
+      nodePositions.forEach((pos, i) => {
         const node = document.createElement('div');
         node.className = 'float-node';
-        node.textContent = label;
-        node.style.left = (10 + (i % 4) * 23 + Math.random() * 8) + '%';
-        node.style.top = (15 + Math.floor(i / 4) * 40 + Math.random() * 15) + '%';
-        node.style.animationDelay = (i * 0.3) + 's';
+        node.textContent = pos.label;
+        node.style.left = pos.left;
+        node.style.top = pos.top;
+        node.style.animationDelay = (i * 0.4) + 's';
         container.appendChild(node);
       });
     });

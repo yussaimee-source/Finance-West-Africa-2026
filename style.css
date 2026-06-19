@@ -3,7 +3,7 @@
    Palette:  Deep Navy #0A0F1E | Teal #1DB89A
              Gold  #C8A951    | Slate #1C2640
              Light #F0F4FF    | White #FFFFFF
-   Type:     Helvetica Neue / Helvetica / Arial (system stack)
+   Type:     Poppins (Google Fonts) — Extra Bold on titles
 ───────────────────────────────────────────────── */
 
 /* ── RESET & BASE ── */
@@ -25,8 +25,8 @@
   --radius:  12px;
   --radius-lg: 20px;
   --transition: 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
-  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-heavy: "Helvetica Neue", "Arial Black", Helvetica, Arial, sans-serif;
+  --font: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heavy: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -70,7 +70,7 @@ em { font-style: normal; color: var(--teal); }
 .section-title {
   font-family: var(--font-heavy);
   font-size: clamp(34px, 4.4vw, 58px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -1.5px;
   line-height: 1.05;
   color: var(--white);
@@ -186,25 +186,96 @@ em { font-style: normal; color: var(--teal); }
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, #1a2e4a 0%, var(--navy) 60%);
+  background: var(--navy);
 }
 
-#heroCanvas {
+/* Full-bleed skyline photo, fills hero exactly */
+.hero__bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
+}
+.hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  animation: heroSlowZoom 24s ease-in-out infinite alternate;
+}
+@keyframes heroSlowZoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.07); }
+}
+.hero__bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6,9,18,0.6) 0%, rgba(6,9,18,0.3) 35%, rgba(6,9,18,0.7) 75%, rgba(6,9,18,0.94) 100%),
+    linear-gradient(90deg, rgba(6,9,18,0.92) 0%, rgba(6,9,18,0.55) 38%, rgba(6,9,18,0.2) 65%, rgba(6,9,18,0.15) 100%);
+}
+
+/* Animated AI overlay container, sits above the photo, fills hero */
+.hero__ai-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
   pointer-events: none;
 }
 
-.hero__grid {
+/* Horizontal scanning sweep lines, evoke an AI vision/scan effect */
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(29,184,154,0.9) 50%, transparent 100%);
+  box-shadow: 0 0 12px rgba(29,184,154,0.6);
+  opacity: 0;
+}
+.scan-line--1 { animation: scanSweep 7s ease-in-out infinite; }
+.scan-line--2 { animation: scanSweep 7s ease-in-out infinite 3.5s; }
+@keyframes scanSweep {
+  0%   { top: 0%; opacity: 0; }
+  8%   { opacity: 0.8; }
+  50%  { opacity: 0.4; }
+  92%  { opacity: 0.8; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Circuit / data-node SVG layer over the skyline */
+.hero__circuit-svg {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(29,184,154,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(29,184,154,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+  width: 100%;
+  height: 100%;
+}
+.circuit-path {
+  fill: none;
+  stroke: rgba(29,184,154,0.55);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+  animation: dashFlow 3s linear infinite;
+}
+.circuit-path--2, .circuit-path--4 { stroke: rgba(200,169,81,0.45); animation-duration: 4s; }
+@keyframes dashFlow {
+  to { stroke-dashoffset: -120; }
+}
+.node-dot {
+  fill: var(--teal);
+  filter: drop-shadow(0 0 6px rgba(29,184,154,0.9));
+  animation: nodePulse 2.4s ease-in-out infinite;
+}
+.node-dot--d1 { animation-delay: 0.4s; fill: var(--gold); filter: drop-shadow(0 0 6px rgba(200,169,81,0.9)); }
+.node-dot--d2 { animation-delay: 0.8s; }
+.node-dot--d3 { animation-delay: 1.2s; fill: var(--gold); filter: drop-shadow(0 0 6px rgba(200,169,81,0.9)); }
+.node-dot--d4 { animation-delay: 1.6s; }
+@keyframes nodePulse {
+  0%, 100% { r: 3.5; opacity: 0.6; }
+  50%      { r: 6;   opacity: 1; }
 }
 
 .hero__nodes {
@@ -215,14 +286,16 @@ em { font-style: normal; color: var(--teal); }
 
 .float-node {
   position: absolute;
-  background: rgba(29,184,154,0.08);
-  border: 1px solid rgba(29,184,154,0.2);
-  color: rgba(29,184,154,0.7);
+  background: rgba(10,15,30,0.55);
+  border: 1px solid rgba(29,184,154,0.35);
+  color: rgba(29,184,154,0.9);
   font-size: 10px;
   font-family: var(--font);
+  font-weight: 600;
   padding: 5px 10px;
   border-radius: 4px;
   white-space: nowrap;
+  backdrop-filter: blur(4px);
   animation: floatNode 6s ease-in-out infinite;
   opacity: 0;
   animation-fill-mode: both;
@@ -230,7 +303,7 @@ em { font-style: normal; color: var(--teal); }
 @keyframes floatNode {
   0%   { opacity: 0; transform: translateY(10px); }
   20%  { opacity: 1; }
-  80%  { opacity: 0.6; }
+  80%  { opacity: 0.7; }
   100% { opacity: 0; transform: translateY(-20px); }
 }
 
@@ -279,7 +352,7 @@ em { font-style: normal; color: var(--teal); }
 .hero__headline-line {
   font-family: var(--font-heavy);
   font-size: clamp(42px, 6.8vw, 92px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -2px;
   line-height: 1.02;
   color: var(--white);
@@ -296,7 +369,7 @@ em { font-style: normal; color: var(--teal); }
 .hero__headline-sub {
   font-size: clamp(24px, 3.2vw, 44px);
   color: var(--gold);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -1px;
 }
 
@@ -335,7 +408,7 @@ em { font-style: normal; color: var(--teal); }
 .hero__countdown-num {
   font-family: var(--font-heavy);
   font-size: clamp(26px, 3.2vw, 38px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -1px;
   color: var(--teal);
   line-height: 1;
@@ -357,36 +430,33 @@ em { font-style: normal; color: var(--teal); }
   margin-bottom: 16px;
 }
 
-/* AI Tags */
-.hero__ai-tags {
-  position: absolute;
-  right: 80px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 10;
-}
+/* AI Tags — scattered across the skyline at different points of interest */
 .ai-tag {
+  position: absolute;
   display: flex;
   align-items: center;
   gap: 8px;
   background: rgba(10,15,30,0.7);
-  border: 1px solid rgba(29,184,154,0.25);
+  border: 1px solid rgba(29,184,154,0.3);
   backdrop-filter: blur(12px);
-  padding: 10px 16px;
+  padding: 9px 15px;
   border-radius: 6px;
   font-size: 12px;
   font-family: var(--font);
-  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
   white-space: nowrap;
-  animation: slideInRight 0.8s ease both;
+  z-index: 5;
+  animation: slideInRight 0.8s ease both, tagFloat 5s ease-in-out infinite;
 }
-.ai-tag--1 { animation-delay: 0.6s; }
-.ai-tag--2 { animation-delay: 0.8s; }
-.ai-tag--3 { animation-delay: 1.0s; }
-.ai-tag--4 { animation-delay: 1.2s; }
+.ai-tag--1 { top: 10%;  right: 28%;  animation-delay: 0.6s, 0s; }
+.ai-tag--2 { top: 34%;  right: 4%;   animation-delay: 0.8s, 1.2s; }
+.ai-tag--3 { top: 50%;  right: 38%;  animation-delay: 1.0s, 0.6s; }
+.ai-tag--4 { top: 80%;  right: 6%;   animation-delay: 1.2s, 1.8s; }
+@keyframes tagFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(20px); }
   to   { opacity: 1; transform: none; }
@@ -462,7 +532,7 @@ em { font-style: normal; color: var(--teal); }
 .statsbar__item strong {
   font-family: var(--font-heavy);
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.5px;
   color: var(--teal);
 }
@@ -592,7 +662,7 @@ em { font-style: normal; color: var(--teal); }
 .why__card h3 {
   font-family: var(--font-heavy);
   font-size: 19px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.3px;
   margin-bottom: 12px;
   color: var(--white);
@@ -633,7 +703,7 @@ em { font-style: normal; color: var(--teal); }
 .themes__track-num {
   font-family: var(--font-heavy);
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 3px;
   color: var(--teal);
   margin-bottom: 12px;
@@ -642,7 +712,7 @@ em { font-style: normal; color: var(--teal); }
 .themes__track-title {
   font-family: var(--font-heavy);
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.5px;
   color: var(--white);
   margin-bottom: 14px;
@@ -720,7 +790,7 @@ em { font-style: normal; color: var(--teal); }
 .timeline__time {
   font-size: 13px;
   font-family: var(--font);
-  font-weight: 900;
+  font-weight: 800;
   color: var(--teal);
   letter-spacing: 1px;
 }
@@ -785,7 +855,7 @@ em { font-style: normal; color: var(--teal); }
 .speaker-card__avatar--6 { background: linear-gradient(135deg, #E2904A, #8A4A1A); }
 .speaker-card__initials {
   font-family: var(--font-heavy);
-  font-weight: 900;
+  font-weight: 800;
   font-size: 18px;
   color: var(--white);
 }
@@ -858,7 +928,7 @@ em { font-style: normal; color: var(--teal); }
   border-radius: var(--radius);
   padding: 20px 32px;
   font-family: var(--font-heavy);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.3px;
   font-size: 16px;
   color: rgba(255,255,255,0.55);
@@ -953,7 +1023,7 @@ em { font-style: normal; color: var(--teal); }
 .ticket-card__amount {
   font-family: var(--font-heavy);
   font-size: 54px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -2px;
   color: var(--white);
   line-height: 1;
@@ -990,7 +1060,7 @@ em { font-style: normal; color: var(--teal); }
 .register__form-block h3 {
   font-family: var(--font-heavy);
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.8px;
   color: var(--white);
   margin-bottom: 8px;
@@ -1125,7 +1195,9 @@ em { font-style: normal; color: var(--teal); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .hero__ai-tags { display: none; }
+  .ai-tag { display: none; }
+  .hero__circuit-svg { display: none; }
+  .float-node { display: none; }
   .why__grid { grid-template-columns: repeat(2, 1fr); }
   .themes__grid { grid-template-columns: 1fr; }
   .about__layout { grid-template-columns: 1fr; gap: 48px; }
